@@ -36,7 +36,7 @@ platform :ios do
     pbx_path = "#{GITHUB_WORKSPACE}/Loop/Loop.xcodeproj/project.pbxproj"
     if File.exist?(pbx_path)
       pbx_content = File.read(pbx_path)
-      pbx_content.gsub!('APP_GROUP_IDENTIFIER = "group.Group";', 'APP_GROUP_IDENTIFIER = "group.com.N3RPS9UH5M.loopkit.LoopGroup";')
+      pbx_content.gsub!('APP_GROUP_IDENTIFIER = "group.$(MAIN_APP_BUNDLE_IDENTIFIER)Group";', 'APP_GROUP_IDENTIFIER = "group.com.N3RPS9UH5M.loopkit.LoopGroup";')
       File.write(pbx_path, pbx_content)
     end
 
